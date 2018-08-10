@@ -17,11 +17,11 @@ public class SpringbootWebRestfulApplication {
     }
 
     @Bean
-    public ViewResolver myViewResolver(){
-        return  new MyViewResolver();
+    public ViewResolver myViewResolver() {
+        return new MyViewResolver();
     }
 
-    private static class MyViewResolver implements  ViewResolver{
+    private static class MyViewResolver implements ViewResolver {
 
         @Nullable
         @Override

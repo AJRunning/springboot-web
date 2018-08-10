@@ -1,6 +1,5 @@
 package com.runningsss.component;
 
-import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,9 +14,9 @@ public class LoginHandlerIntecept implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Object user = request.getSession().getAttribute("loginUser");
-        if (user == null){
-            request.setAttribute("msg","没有登录");
-            request.getRequestDispatcher("/index.html").forward(request,response);
+        if (user == null) {
+            request.setAttribute("msg", "没有登录");
+            request.getRequestDispatcher("/index.html").forward(request, response);
             return false;
         }
 

@@ -1,6 +1,5 @@
 package com.runningsss.controller;
 
-import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,7 +18,7 @@ public class LoginContoller {
     public String login(@RequestParam(value = "username") String username, @RequestParam(value = "password") String password,
                         Map<String, Object> map, HttpSession session) {
         if (username.equals("admin") && password.equals("111111")) {
-            session.setAttribute("loginUser",username);
+            session.setAttribute("loginUser", username);
             return "redirect:/main.html";
         }
         map.put("msg", "用户名密码错误！");

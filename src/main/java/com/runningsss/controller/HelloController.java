@@ -17,15 +17,15 @@ public class HelloController {
 
     @ResponseBody
     @RequestMapping("/hello")
-    public String hello(){
+    public String hello() {
         return "success";
     }
 
     @RequestMapping("/success")
-    public String success(Map<String,Object> map){
+    public String success(Map<String, Object> map) {
 
-        map.put("hello","<h1>你好呀</h1>");
-        map.put("users", Arrays.asList("magic","tony","running"));
+        map.put("hello", "<h1>你好呀</h1>");
+        map.put("users", Arrays.asList("magic", "tony", "running"));
         return "success";
     }
 }
