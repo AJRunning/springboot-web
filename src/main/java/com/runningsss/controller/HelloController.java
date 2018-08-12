@@ -1,7 +1,9 @@
 package com.runningsss.controller;
 
+import com.runningsss.exception.UserNotExist;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Arrays;
@@ -17,7 +19,10 @@ public class HelloController {
 
     @ResponseBody
     @RequestMapping("/hello")
-    public String hello() {
+    public String hello(@RequestParam("userName") String userName) {
+        if ("111".equals(userName)){
+            throw new UserNotExist();
+        }
         return "success";
     }
 
